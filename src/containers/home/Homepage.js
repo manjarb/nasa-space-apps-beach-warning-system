@@ -22,10 +22,6 @@ export default class Homepage extends Component {
             zoom: 8,
             center: latLong
         });
-        // let marker = new google.maps.Marker({
-        //     position: latLong,
-        //     map: map
-        // });
 
         let input = document.getElementById(this.mapSearchInputId);
         let autocomplete = new google.maps.places.Autocomplete(input);

@@ -16,7 +16,7 @@ export default class SearchInputBox extends Component {
             <div className="search-input-box-container homepage-input-form-container">
                 <div className="field is-grouped">
                     <p className="control">
-                        <input className="input"
+                        <input className="input wide-input"
                                type="text"
                                placeholder="Type your beach name"
                                id={this.props.id}/>
