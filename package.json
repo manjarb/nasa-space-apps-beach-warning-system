@@ -9,8 +9,20 @@
     "stylus": "^0.54.5"
   },
   "dependencies": {
+    "bulma": "^0.4.1",
+    "es6-promise": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.4",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-html-parser": "^1.0.3",
+    "react-pagify": "^2.1.1",
+    "react-redux": "^5.0.4",
+    "react-router": "^2.4.0",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "segmentize": "^0.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
