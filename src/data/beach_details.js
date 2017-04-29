@@ -24,7 +24,7 @@ const one_beach = {
 
 export const beach_details = {
     image_url: [beach01,beach02,beach03,beach04,beach05][getRandomInt(0,4)],
-    sun_level: getRandomInt(1,4),
+    sun_level: 3,
     suggestion_time: `${getRandomInt(4,6)}:00`,
     hab_level: getRandomInt(1,3),
     nearest_beachs: [

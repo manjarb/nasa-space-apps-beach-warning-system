@@ -1,6 +1,12 @@
 @import "~flatpickr/dist/flatpickr.css";
 @import "~bulma/css/bulma.css";
 @import "./normalize.css";
+.red-text {
+  color: #ff3232;
+}
+.orange-text {
+  color: #ff8c00;
+}
 .wide-input {
   min-width: 320px !important;
 }
@@ -9,6 +15,12 @@ header {
 }
 .container {
   max-width: 1024px;
+}
+.margin-bottom-15 {
+  margin-bottom: 15px !important;
+}
+.margin-bottom-10 {
+  margin-bottom: 10px !important;
 }
 .homepage-input-form-container > .field {
   -webkit-box-pack: center;
