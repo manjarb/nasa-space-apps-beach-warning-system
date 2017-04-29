@@ -12,6 +12,7 @@ import './css/style.css'
 
 import App from './containers/App'
 import Homepage from './containers/home/Homepage'
+import BeachDetails from './containers/details/BeachDetails'
 
 function handleUpdate() {
     let {
@@ -25,9 +26,11 @@ function handleUpdate() {
 
 const router = (
     <Provider store={ store }>
-        <Router onUpdate={handleUpdate} history={ history }>
+        <Router onUpdate={handleUpdate}
+                history={ history }>
             <Route path="/" component={App}>
                 <IndexRoute components={Homepage}/>
+                <Route path="details/name/:name/date/:date/lat/:lat/lng/:lng" components={BeachDetails}/>
             </Route>
         </Router>
     </Provider>

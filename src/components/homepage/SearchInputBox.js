@@ -4,8 +4,36 @@ import Flatpickr from 'react-flatpickr'
 
 export default class SearchInputBox extends Component {
 
+    constructor() {
+        super()
+        this.searchPlace = this.searchPlace.bind(this)
+        this.changeCurrentDate = this.changeCurrentDate.bind(this)
+        this.state = {
+            currentDate: new Date()
+        }
+    }
+
     componentDidMount() {
 
+    }
+
+    searchPlace() {
+        if(this.search_place_input.value !== "" &&
+           this.search_place_input.value !== null &&
+            this.search_place_input.value !== undefined) {
+
+            this.props.gotoBeachDetails(this.search_place_input.value,this.state.currentDate)
+
+        } else {
+            alert('Please input your beach name')
+        }
+    }
+
+    changeCurrentDate(date) {
+        this.setState({
+            ...this.state,
+            currentDate: date
+        })
     }
 
     render() {
@@ -19,21 +47,23 @@ export default class SearchInputBox extends Component {
                         <input className="input wide-input"
                                type="text"
                                placeholder="Type your beach name"
+                               ref={(input) => this.search_place_input = input}
                                id={this.props.id}/>
                     </p>
                     <p className="control">
                         <Flatpickr data-enable-time
                                    className="input"
-                                   onChange={v => console.info(v)}
+                                   onChange={v => this.changeCurrentDate(v)}
                                    options={{
                                        minDate: '2017-01-01',
-                                       altInput: true
+                                       altInput: true,
+                                       defaultDate: new Date()
                                    }}/>
                     </p>
                     <p className="control">
-                        <a className="button is-info">
+                        <button onClick={this.searchPlace} className="button is-info">
                             Search
-                        </a>
+                        </button>
                     </p>
                 </div>
             </div>

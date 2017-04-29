@@ -2,7 +2,10 @@
 @import "~bulma/css/bulma.css";
 @import "./normalize.css";
 .wide-input {
-  min-width: 320px;
+  min-width: 320px !important;
+}
+header {
+  border-bottom: 1px solid #d3d3d3;
 }
 .homepage-input-form-container > .field {
   -webkit-box-pack: center;
@@ -15,4 +18,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 45px;
+}
+.search-input-box-container .input {
+  min-width: 200px;
 }
