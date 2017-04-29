@@ -1,5 +1,5 @@
-import fetch from 'isomorphic-fetch';
-import { browserHistory } from 'react-router'
+// import fetch from 'isomorphic-fetch';
+// import { browserHistory } from 'react-router'
 
 export function update_beach_details(beach_details) {
     return {

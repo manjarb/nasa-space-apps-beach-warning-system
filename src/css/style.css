@@ -1,2 +1,8 @@
+@import "~flatpickr/dist/flatpickr.css";
 @import "~bulma/css/bulma.css";
 @import "./normalize.css";
+.homepage-input-form-container > .field {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
