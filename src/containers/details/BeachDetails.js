@@ -41,7 +41,6 @@ export default class BeachDetails extends Component {
         const beach_name_array = params.name.split(",")
         const beach_name_display = beach_name_array.slice()
         beach_name_array.splice(0,1)
-        console.log(beach_name_array)
 
         const date_array = params.date.split(" ")
         const only_date_array = [date_array[0],date_array[1],date_array[2]].join(" ")
