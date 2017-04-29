@@ -1,7 +1,18 @@
 import React, { Component } from 'react'
-import { expose_effect } from '../../data/beach_details'
+import { expose_effect, hbs_definition } from '../../data/beach_details'
+import HbsModal from '../../components/details/modal/HbsModal'
+import SuggestBeachCard from '../../components/details/hbs/SuggestBeachCard'
 
 export default class BeachDetails extends Component {
+
+    constructor() {
+        super()
+        this.openHbsModalFunc = this.openHbsModalFunc.bind(this)
+        this.closeHbsModalFunc = this.closeHbsModalFunc.bind(this)
+        this.state = {
+            openHbsModal: false
+        }
+    }
 
     returnSunExposeLevel(level) {
         if(level === 3) {
@@ -9,23 +20,38 @@ export default class BeachDetails extends Component {
         }
     }
 
+    openHbsModalFunc() {
+        this.setState({
+            ...this.state,
+            openHbsModal: true
+        })
+    }
+
+    closeHbsModalFunc() {
+        this.setState({
+            ...this.state,
+            openHbsModal: false
+        })
+    }
+
     render() {
 
         const params = this.props.params
         const beach_details = this.props.beach_details
         const beach_name_array = params.name.split(",")
+        const beach_name_display = beach_name_array.slice()
         beach_name_array.splice(0,1)
+        console.log(beach_name_array)
 
         const date_array = params.date.split(" ")
         const only_date_array = [date_array[0],date_array[1],date_array[2]].join(" ")
-        console.log(only_date_array)
 
         const only_time = date_array[4]
 
         return (
             <div className="container beach-details-container">
                 <section className="beach-details-section">
-                    <h1 className="has-text-centered">{beach_name_array[0]}</h1>
+                    <h1 className="has-text-centered">{beach_name_display[0]}</h1>
                     <p className="has-text-centered">{beach_name_array.join()}</p>
                     <div className="details-box">
                         <div className="columns">
@@ -52,12 +78,32 @@ export default class BeachDetails extends Component {
                                     <span className="orange-text"><strong>Very High</strong></span>
                                 </h2>
                                 <p>
-                                    <button className="button is-warning"><strong>What is HABs?</strong></button>
+                                    <button onClick={this.openHbsModalFunc} className="button is-warning"><strong>What is HABs?</strong></button>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
+                <br/>
+                <section className="suggestion-beach-section">
+                    <h1 className="has-text-centered margin-bottom-0">Nearest Suggestion Beach</h1>
+                    <p className="has-text-centered margin-bottom-15">Which is HAB-free beach areas</p>
+                    <br/>
+                    <div className="suggestion-beach-list-box">
+                        <div className="columns">
+                            {beach_details.nearest_beachs.map((beach,index) =>
+                                <div className="column is-4"
+                                     key={`beach-${index}`}>
+                                    <SuggestBeachCard beach={beach}
+                                                      params={params}/>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </section>
+                {this.state.openHbsModal && <HbsModal closeModal={this.closeHbsModalFunc}
+                                                      title="What is HABs?"
+                                                      content={hbs_definition}/>}
             </div>
         )
     }

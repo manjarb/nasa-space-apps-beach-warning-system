@@ -9,6 +9,10 @@ export default class Main extends Component {
                 <main className="">
                     {React.cloneElement(this.props.children, this.props)}
                 </main>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
         )
     }

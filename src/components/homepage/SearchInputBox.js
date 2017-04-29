@@ -38,8 +38,6 @@ export default class SearchInputBox extends Component {
 
     render() {
 
-        console.log(this.props)
-
         return (
             <div className="search-input-box-container homepage-input-form-container">
                 <div className="field is-grouped">
