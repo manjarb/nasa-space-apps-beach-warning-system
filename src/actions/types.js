@@ -1,0 +1,1 @@
+export const UPDATE_BEACH_DETAILS = "update_beach_details"
