@@ -6,8 +6,10 @@ import { browserHistory } from 'react-router'
 import thunk from 'redux-thunk'
 import rootReducer from './reducers/index'
 
+import { beach_details } from './data/beach_details'
+
 const defaultState = {
-    beach_details: null,
+    beach_details: beach_details,
 }
 
 const store = createStore(rootReducer, defaultState,applyMiddleware(thunk));

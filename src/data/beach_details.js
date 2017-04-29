@@ -14,12 +14,12 @@ export const expose_effect = "Ultraviolet (UV) irradiation present in sunlight i
 export const hbs_definition = "Harmful algal blooms, or HABs, occur when colonies of algae—simple plants that live in the sea and freshwater—grow out of control while producing toxic or harmful effects on people, fish, shellfish, marine mammals, and birds. The human illnesses caused by HABs, though rare, can be debilitating or even fatal. HABs have been reported in every U.S. coastal state, and their occurrence may be on the rise. HABs are a national concern because they affect not only the health of people and marine ecosystems, but also the 'health' of local and regional economies."
 
 const one_beach = {
-    name: faker.address.city,
-    address: faker.address.streetAddress,
-    country: faker.address.country,
+    name: faker.address.city(),
+    address: faker.address.streetAddress(),
+    country: faker.address.country(),
     date: new Date(),
-    lat: faker.address.latitude,
-    lng: faker.address.longitude
+    lat: faker.address.latitude(),
+    lng: faker.address.longitude()
 }
 
 export const beach_details = {

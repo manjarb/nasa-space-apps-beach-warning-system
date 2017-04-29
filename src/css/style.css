@@ -7,6 +7,9 @@
 header {
   border-bottom: 1px solid #d3d3d3;
 }
+.container {
+  max-width: 1024px;
+}
 .homepage-input-form-container > .field {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -21,4 +24,10 @@ header {
 }
 .search-input-box-container .input {
   min-width: 200px;
+}
+.beach-details-section > h1 {
+  margin-bottom: 0;
+}
+.beach-details-section > p {
+  margin-bottom: 60px;
 }

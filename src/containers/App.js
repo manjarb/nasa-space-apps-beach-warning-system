@@ -6,6 +6,7 @@ import Main from './Main'
 function mapStateToProps(state) {
     return {
         dashboard_data: state.dashboard_data,
+        beach_details: state.beach_details
     }
 }
 
