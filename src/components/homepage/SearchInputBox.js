@@ -9,13 +9,17 @@ export default class SearchInputBox extends Component {
     }
 
     render() {
+
+        console.log(this.props)
+
         return (
             <div className="search-input-box-container homepage-input-form-container">
                 <div className="field is-grouped">
                     <p className="control">
                         <input className="input"
                                type="text"
-                               placeholder="Type your beach name"/>
+                               placeholder="Type your beach name"
+                               id={this.props.id}/>
                     </p>
                     <p className="control">
                         <Flatpickr data-enable-time
